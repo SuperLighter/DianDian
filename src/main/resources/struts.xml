@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.i18n.encoding" value="UTF-8" />   
+
+    <package name="control" namespace="/" extends="struts-default">
+        <action name="LoginCheck" class="com.mysys.app.action.LoginAction">
+            <result name="success">
+              /main.jsp
+            </result>
+            <result name="error">
+            </result>
+        </action>
+    </package>
+    
+    <package name="default" extends="json-default">
+        <action name="LoginApp_action" class="com.mysys.app.action.LoginAction" method="LoginApp">
+        <result type="json"/>
+        </action> 
+    </package>
+
+
+    <!-- Add packages here -->
+
+</struts>
